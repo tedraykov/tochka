@@ -16,6 +16,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { DialogComponent } from './point/dialog/dialog.component';
 import {MatSelectModule} from '@angular/material/select';
 import { HttpClient } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { HttpClient } from '@angular/common/http';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    FormsModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule,
     MatToolbarModule,

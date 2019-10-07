@@ -2,12 +2,12 @@
 <mat-dialog-content>
   <mat-form-field>
     <mat-label>Намери си името в списъка</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let user of users$ | async" [value]="user.name"></mat-option>
+    <mat-select [(ngModel)]="selectedUser">
+      <mat-option *ngFor="let user of users$ | async" [value]="user">{{user.name}}</mat-option>
     </mat-select>
   </mat-form-field>
 </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button mat-dialog-close>Точка!</button>
+  <button mat-button mat-dialog-close (click)="addPoint()">Точка!</button>
   <button mat-button mat-dialog-close>Върни се</button>
 </mat-dialog-actions>

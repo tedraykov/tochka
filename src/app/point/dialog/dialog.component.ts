@@ -9,11 +9,17 @@ import { Observable } from 'rxjs';
 })
 export class DialogComponent implements OnInit {
   users$: Observable<User[]>;
+  selectedUser: User;
   constructor(private userService: UsersService) {
   }
 
   ngOnInit() {
-    // this.users$ = this.userService.getAllUsers$();
+    this.users$ = this.userService.getAllUsers$();
   }
 
+  addPoint() {
+    if (this.selectedUser) {
+      this.userService.addPoint(this.selectedUser);
+    }
+  }
 }
