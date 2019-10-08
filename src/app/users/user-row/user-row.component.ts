@@ -1,5 +1,7 @@
 import { Component, OnInit, ChangeDetectionStrategy, Input } from '@angular/core';
 import { User } from 'src/app/users.service';
+import { MatDialog } from '@angular/material/dialog';
+import { ConfigureUserComponent } from '../configure-user/configure-user.component';
 
 @Component({
   selector: 'app-user-row',
@@ -9,9 +11,16 @@ import { User } from 'src/app/users.service';
 })
 export class UserRowComponent implements OnInit {
   @Input() user: User;
-  constructor() { }
+  constructor(private dialog: MatDialog) { }
 
   ngOnInit() {
   }
-
+  addUserDialog() {
+    this.dialog.open(ConfigureUserComponent, {
+      height: '400px',
+      width: '320px',
+      data: this.user
+    });
+  }
 }
+

@@ -5,4 +5,28 @@
 
 mat-card {
   width: 100%;
+  border-radius: 0.5rem;
+  min-height: 4rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  mat-card-title {
+    margin: 0;
+    flex: 1;
+  }
+  mat-card-content {
+    padding: 0 2rem;
+    margin: 0;
+    strong {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+  }
+  button {
+    border-radius: 0.5rem;
+    height: 100%;
+    padding: 0.5rem 1rem;
+    background: rgb(247, 247, 247);
+  }
 }

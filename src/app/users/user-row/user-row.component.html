@@ -1,4 +1,9 @@
-<mat-card>
+<mat-card class="mat-elevation-z6">
   <mat-card-title>{{user.name}}</mat-card-title>
-  <mat-card-content><span>Points: {{user.points}}</span></mat-card-content>
+  <mat-card-content>
+    <span><strong>{{user.points}}</strong> точки</span>
+  </mat-card-content>
+  <button mat-button (click)="addUserDialog()">
+    Настройки
+  </button>
 </mat-card>

@@ -3,7 +3,7 @@ import { Observable, pipe } from 'rxjs';
 import { map, tap, take } from 'rxjs/operators';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 export interface User {
-  id: string;
+  id?: string;
   name: string;
   points: number;
 }
@@ -20,15 +20,29 @@ export class UsersService {
   }
 
   getAllUsers$(): Observable<User[]> {
-    return this.usersCollection.valueChanges({idField: 'id'});
+    return this.usersCollection.valueChanges({ idField: 'id' });
   }
   addPoint(data: User): void {
     this.usersCollection.doc(data.id).valueChanges().pipe(
       take(1),
       tap(doc => {
         const userPoints = (doc as User).points;
-        this.usersCollection.doc(data.id).update({points: userPoints + 1});
+        this.usersCollection.doc(data.id).update({ points: userPoints + 1 });
       })
     ).subscribe();
   }
+
+  addUser(user: User) {
+    this.usersCollection.add(user);
+  }
+
+  updateUser(user: User) {
+    this.usersCollection.doc(user.id).update({name: user.name, points: user.points});
+  }
+
+  deleteUser(user: User) {
+    this.usersCollection.doc(user.id).delete();
+  }
 }
+
+

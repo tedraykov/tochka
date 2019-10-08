@@ -1,1 +1,3 @@
 <app-user-row *ngFor="let user of users | async" [user]="user"></app-user-row>
+<mat-divider></mat-divider>
+<button mat-raised-button class="add-user" (click)="addUserDialog()">Добави се</button>

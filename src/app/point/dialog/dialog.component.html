@@ -2,7 +2,7 @@
 <mat-dialog-content>
   <mat-form-field>
     <mat-label>Намери си името в списъка</mat-label>
-    <mat-select [(ngModel)]="selectedUser">
+    <mat-select [(ngModel)]="selectedUser" required>
       <mat-option *ngFor="let user of users$ | async" [value]="user">{{user.name}}</mat-option>
     </mat-select>
   </mat-form-field>

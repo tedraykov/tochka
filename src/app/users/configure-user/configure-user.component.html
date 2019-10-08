@@ -1,0 +1,19 @@
+<h2>{{data ? 'Настройки' : 'Добави се'}}</h2>
+<mat-dialog-content>
+  <form [formGroup]="userForm">
+    <mat-form-field appearance="outline">
+      <mat-label>Име</mat-label>
+      <input matInput placeholder="Как се казваш" formControlName="userName">
+      <mat-hint>Не променяй чужди настройки</mat-hint>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Точки</mat-label>
+      <input matInput placeholder="Не мами с точките" formControlName="points">
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-raised-button mat-dialog-close (click)="pushUser()" [disabled]="!userForm.valid">Продължи</button>
+  <button mat-raised-button color="warn" mat-dialog-close *ngIf="data" (click)="deleteUser()">Изтрий се</button>
+  <button mat-button mat-dialog-close *ngIf="!data">Върни се</button>
+</mat-dialog-actions>

@@ -1,3 +1,21 @@
 :host {
   padding: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  align-self: center;
+}
+
+mat-divider {
+  margin: 1rem 0 0;
+}
+
+.add-user {
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  background: rgb(149, 255, 203);
+  background: linear-gradient(
+    135deg,
+    rgba(149, 255, 203, 1) 0%,
+    rgba(149, 252, 255, 1) 100%
+  );
 }
