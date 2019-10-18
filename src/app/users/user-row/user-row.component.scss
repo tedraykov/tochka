@@ -1,6 +1,6 @@
 :host {
   display: flex;
-  margin: 0.5rem 0;
+  margin: 1rem;
 }
 
 mat-card {
@@ -27,6 +27,6 @@ mat-card {
     border-radius: 0.5rem;
     height: 100%;
     padding: 0.5rem 1rem;
-    background: rgb(247, 247, 247);
+    background: rgba(247, 247, 247, 0.1);
   }
 }

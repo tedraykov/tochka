@@ -12,6 +12,9 @@ export class PointComponent implements OnInit {
   ngOnInit() {
   }
   openDialog() {
-    this.dialog.open(DialogComponent);
+    this.dialog.open(DialogComponent, {
+      height: '250px',
+      width: '400px',
+    });
   }
 }

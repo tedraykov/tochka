@@ -1,8 +1,7 @@
 :host {
-  padding: 2rem;
   max-width: 1200px;
-  width: 100%;
   align-self: center;
+  width: 100%;
 }
 
 mat-divider {
@@ -10,8 +9,9 @@ mat-divider {
 }
 
 .add-user {
+  color: black;
   padding: 0.5rem 1rem;
-  margin: 1rem 0;
+  margin: 1rem;
   background: rgb(149, 255, 203);
   background: linear-gradient(
     135deg,
